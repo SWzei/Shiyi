@@ -1,0 +1,301 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2eelanqw6diu"]
+
+[ext_resource type="Script" uid="uid://dvibamfbhgly6" path="res://Scripts/Main/end_screen.gd" id="1_1gwaw"]
+[ext_resource type="FontFile" uid="uid://c61jh50ymuf6u" path="res://Fonts/FangZhengFangSong-GBK-1.ttf" id="2_bhpww"]
+[ext_resource type="Texture2D" uid="uid://cxexgomqyf2lp" path="res://Sprites/UI/panel-border-015.png" id="3_bhpww"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gdxnu"]
+font = ExtResource("2_bhpww")
+font_size = 42
+outline_size = 1
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.521569)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1gwaw"]
+font = ExtResource("2_bhpww")
+font_size = 50
+outline_size = 1
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.52549)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bhpww"]
+font = ExtResource("2_bhpww")
+font_size = 52
+outline_size = 1
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.517647)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8yanq"]
+font = ExtResource("2_bhpww")
+font_size = 56
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.54902)
+shadow_offset = Vector2(2, 2)
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1gwaw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Page1" type="Panel" parent="."]
+layout_mode = 0
+
+[node name="text1" type="Label" parent="Page1"]
+z_index = 1
+layout_mode = 0
+offset_left = 236.0
+offset_top = 227.0
+offset_right = 1736.0
+offset_bottom = 276.0
+text = "    猛然惊醒，原来，是一场梦。"
+label_settings = SubResource("LabelSettings_gdxnu")
+autowrap_mode = 3
+
+[node name="text2" type="Label" parent="Page1"]
+z_index = 1
+layout_mode = 0
+offset_left = 236.0
+offset_top = 307.0
+offset_right = 1736.0
+offset_bottom = 356.0
+text = "    如今的你，已经离开鼓楼很久了。"
+label_settings = SubResource("LabelSettings_gdxnu")
+autowrap_mode = 3
+
+[node name="text3" type="Label" parent="Page1"]
+z_index = 1
+layout_mode = 0
+offset_left = 236.0
+offset_top = 387.0
+offset_right = 1736.0
+offset_bottom = 436.0
+text = "    可那些人物，事件，却仍然历历在目。"
+label_settings = SubResource("LabelSettings_gdxnu")
+autowrap_mode = 3
+
+[node name="text4" type="Label" parent="Page1"]
+z_index = 1
+layout_mode = 0
+offset_left = 236.0
+offset_top = 467.0
+offset_right = 1736.0
+offset_bottom = 620.0
+text = "    “我最终，会把这些都忘掉吗？”你喃喃自语。你不甘心如此，事情不该如此，于是，一种预感越来越强烈——"
+label_settings = SubResource("LabelSettings_gdxnu")
+autowrap_mode = 3
+
+[node name="text5" type="Label" parent="Page1"]
+z_index = 1
+layout_mode = 0
+offset_left = 236.0
+offset_top = 597.0
+offset_right = 1736.0
+offset_bottom = 646.0
+text = "    你一定要这个梦写于笔下，将一切的一切，写于笔下。"
+label_settings = SubResource("LabelSettings_gdxnu")
+autowrap_mode = 3
+
+[node name="text6" type="Label" parent="Page1"]
+z_index = 1
+layout_mode = 0
+offset_left = 236.0
+offset_top = 677.0
+offset_right = 1736.0
+offset_bottom = 778.0
+text = "    一个个故事在纸张上交织，一段段经历以文字讲述，你将那些遗失记忆碎片重新拾起，致敬那一年鼓楼，那一年的生命礼赞。"
+label_settings = SubResource("LabelSettings_gdxnu")
+autowrap_mode = 3
+
+[node name="text7" type="Label" parent="Page1"]
+z_index = 1
+layout_mode = 0
+offset_left = 236.0
+offset_top = 810.0
+offset_right = 1736.0
+offset_bottom = 859.0
+text = "    …………"
+label_settings = SubResource("LabelSettings_gdxnu")
+autowrap_mode = 3
+
+[node name="Page2" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="text8" type="Label" parent="Page2"]
+z_index = 1
+layout_mode = 0
+offset_left = 236.0
+offset_top = 337.0
+offset_right = 1736.0
+offset_bottom = 438.0
+text = "    置笔，你淡淡一笑，合上手中笔记，明天的生活仍充满挑战与机遇，你的故事仍然在被精彩且独特地书写着。"
+label_settings = SubResource("LabelSettings_gdxnu")
+autowrap_mode = 3
+
+[node name="text9" type="Label" parent="Page2"]
+z_index = 1
+layout_mode = 0
+offset_left = 236.0
+offset_top = 480.0
+offset_right = 1736.0
+offset_bottom = 581.0
+text = "    笔记封面，赫然写着——"
+label_settings = SubResource("LabelSettings_gdxnu")
+autowrap_mode = 3
+
+[node name="text10" type="Label" parent="Page2"]
+z_index = 1
+layout_mode = 0
+offset_left = 318.0
+offset_top = 599.0
+offset_right = 618.0
+offset_bottom = 657.0
+text = "《拾遗笔记》"
+label_settings = SubResource("LabelSettings_1gwaw")
+
+[node name="Page3" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="text11" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -186.0
+offset_right = 104.0
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "《拾遗》"
+label_settings = SubResource("LabelSettings_bhpww")
+
+[node name="text12" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -62.0
+offset_right = 28.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "终"
+label_settings = SubResource("LabelSettings_8yanq")
+
+[node name="MapButton" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 132.0
+offset_right = 150.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "返回地图
+"
+
+[node name="TextureRect" type="TextureRect" parent="MapButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bhpww")
+
+[node name="BookButton" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 222.0
+offset_right = 150.0
+offset_bottom = 282.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "回顾笔记"
+
+[node name="TextureRect" type="TextureRect" parent="BookButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bhpww")
+
+[node name="QuitButton" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 312.0
+offset_right = 150.0
+offset_bottom = 372.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "退出"
+
+[node name="TextureRect" type="TextureRect" parent="QuitButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bhpww")
+
+[connection signal="pressed" from="MapButton" to="." method="_on_map_button_pressed"]
+[connection signal="pressed" from="BookButton" to="." method="_on_book_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

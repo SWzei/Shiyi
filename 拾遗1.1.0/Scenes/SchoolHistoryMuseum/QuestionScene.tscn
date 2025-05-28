@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=3 uid="uid://c88qltaqrv68q"]
+
+[ext_resource type="Script" uid="uid://c2ra07imo7uk0" path="res://Scripts/QuestionScene/QuestionScene.gd" id="1_aopjm"]
+[ext_resource type="Texture2D" uid="uid://bsxcmn2tgo420" path="res://Sprites/Structures/SchoolHistoryMuseum/SchoolHistoryMuseum.jpeg" id="2_75yd6"]
+[ext_resource type="PackedScene" uid="uid://rt2n5aklnvgd" path="res://Scenes/SchoolHistoryMuseum/SchoolHistoryMuseum2.tscn" id="2_e3chw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5wr6"]
+bg_color = Color(0.171203, 0.0793703, 0.00269169, 0.866667)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+expand_margin_left = 25.0
+expand_margin_top = 25.0
+expand_margin_right = 25.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxsdc"]
+bg_color = Color(0.622389, 0.49631, 0.344769, 1)
+border_width_left = 100
+border_width_right = 100
+border_color = Color(0.17, 0.07837, 0.0034, 0)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="QuestionScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aopjm")
+scene_to_load = ExtResource("2_e3chw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.431373)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_75yd6")
+expand_mode = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.1
+anchor_right = 0.85
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b5wr6")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_qxsdc")
+
+[node name="HintLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Progress" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.756771
+anchor_top = 0.826852
+anchor_right = 0.838021
+anchor_bottom = 0.888889
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

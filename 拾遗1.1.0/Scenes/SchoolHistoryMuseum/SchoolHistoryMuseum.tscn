@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://drphji7dep6eh"]
+
+[ext_resource type="Script" uid="uid://bcurybm85nalg" path="res://Scripts/SchoolHistoryMuseum/Dialogue.gd" id="1_jqkug"]
+[ext_resource type="Texture2D" uid="uid://bsxcmn2tgo420" path="res://Sprites/Structures/SchoolHistoryMuseum/SchoolHistoryMuseum.jpeg" id="2_devlr"]
+[ext_resource type="PackedScene" uid="uid://c88qltaqrv68q" path="res://Scenes/SchoolHistoryMuseum/QuestionScene.tscn" id="2_tvfsx"]
+[ext_resource type="Texture2D" uid="uid://bw5sp3ddnvb0a" path="res://Sprites/Structures/SchoolHistoryMuseum/Guide.png" id="4_tvfsx"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jqkug")
+scene_to_load = ExtResource("2_tvfsx")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.984314)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_devlr")
+expand_mode = 1
+
+[node name="Guide" type="Sprite2D" parent="."]
+position = Vector2(474, 849)
+scale = Vector2(0.235623, 0.226196)
+texture = ExtResource("4_tvfsx")

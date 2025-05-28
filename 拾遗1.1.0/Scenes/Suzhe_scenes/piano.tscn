@@ -1,0 +1,147 @@
+[gd_scene load_steps=20 format=3 uid="uid://cny5mccl1trqi"]
+
+[ext_resource type="Script" uid="uid://ckrewpw8pqq4i" path="res://Scripts/Suzhe/piano/piano.gd" id="1_cgu3c"]
+[ext_resource type="Texture2D" uid="uid://ddg7r0p53v8tc" path="res://assets/pictures/背景.jpg" id="2_oiqj6"]
+[ext_resource type="PackedScene" uid="uid://b74c14jov5k3l" path="res://Scenes/Suzhe_scenes/keys/do.tscn" id="3_isyg1"]
+[ext_resource type="PackedScene" uid="uid://bdoxtlw3iq5lp" path="res://Scenes/Suzhe_scenes/keys/re.tscn" id="4_263s7"]
+[ext_resource type="PackedScene" uid="uid://wmmxecli6pdx" path="res://Scenes/Suzhe_scenes/keys/mi.tscn" id="5_df6yt"]
+[ext_resource type="PackedScene" uid="uid://g7w5smk12mgi" path="res://Scenes/Suzhe_scenes/keys/fa.tscn" id="6_qtyh6"]
+[ext_resource type="PackedScene" uid="uid://cm0giha4a3esn" path="res://Scenes/Suzhe_scenes/keys/so.tscn" id="7_u34nl"]
+[ext_resource type="PackedScene" uid="uid://1auyqx4fwn1w" path="res://Scenes/Suzhe_scenes/keys/la.tscn" id="8_mcpmo"]
+[ext_resource type="PackedScene" uid="uid://dyxt3gh5lt1pe" path="res://Scenes/Suzhe_scenes/keys/si.tscn" id="9_ch4f4"]
+[ext_resource type="PackedScene" uid="uid://2uesowv13yx7" path="res://Scenes/Suzhe_scenes/keys/do'.tscn" id="10_ra5oi"]
+[ext_resource type="PackedScene" uid="uid://c60jitft80hd7" path="res://Scenes/Suzhe_scenes/keys/re'.tscn" id="11_cb6p7"]
+[ext_resource type="PackedScene" uid="uid://ct2stmkecdamy" path="res://Scenes/Suzhe_scenes/keys/mi'.tscn" id="12_lkdmh"]
+[ext_resource type="PackedScene" uid="uid://bdm8ss8augj6g" path="res://Scenes/Suzhe_scenes/keys/fa'.tscn" id="13_xr2sf"]
+[ext_resource type="PackedScene" uid="uid://bai1h0j6qk6r7" path="res://Scenes/Suzhe_scenes/keys/so'.tscn" id="14_e645w"]
+[ext_resource type="PackedScene" uid="uid://468onk8okvao" path="res://Scenes/Suzhe_scenes/keys/la'.tscn" id="15_hnd75"]
+[ext_resource type="PackedScene" uid="uid://ct13mq3fuve6t" path="res://Scenes/Suzhe_scenes/keys/si'.tscn" id="16_0s8ar"]
+[ext_resource type="Texture2D" uid="uid://b3x506dvmrf8r" path="res://assets/music_score/NJU_school_song.png" id="18_1ukyj"]
+[ext_resource type="Texture2D" uid="uid://o112a3f74mlp" path="res://Sprites/UI/shadedDark24.png" id="18_cgu3c"]
+
+[sub_resource type="GDScript" id="GDScript_cgu3c"]
+script/source = "extends Node2D
+
+@onready var sco = $Sprite2D
+
+func _ready():
+	sco.modulate.a = 0.8    # 设置透明度为 70%
+"
+
+[node name="piano" type="Node2D"]
+position = Vector2(-112, 245)
+scale = Vector2(1.28, 1.28)
+script = ExtResource("1_cgu3c")
+
+[node name="background" type="Sprite2D" parent="."]
+visibility_layer = 4
+z_as_relative = false
+position = Vector2(831.25, 231.25)
+scale = Vector2(1.37457, 0.877865)
+texture = ExtResource("2_oiqj6")
+
+[node name="do" parent="." instance=ExtResource("3_isyg1")]
+offset_left = 122.0
+offset_top = 388.0
+offset_right = 357.0
+offset_bottom = 1823.0
+scale = Vector2(0.17, 0.17)
+
+[node name="re" parent="." instance=ExtResource("4_263s7")]
+offset_left = 163.0
+offset_top = 385.0
+offset_right = 330.0
+offset_bottom = 1395.0
+
+[node name="mi" parent="." instance=ExtResource("5_df6yt")]
+offset_left = 204.0
+offset_top = 384.0
+offset_right = 372.0
+offset_bottom = 1401.0
+
+[node name="fa" parent="." instance=ExtResource("6_qtyh6")]
+offset_left = 246.0
+offset_top = 383.0
+offset_right = 405.0
+offset_bottom = 1389.0
+
+[node name="so" parent="." instance=ExtResource("7_u34nl")]
+offset_left = 286.0
+offset_top = 381.0
+offset_right = 448.0
+offset_bottom = 1392.0
+
+[node name="la" parent="." instance=ExtResource("8_mcpmo")]
+offset_left = 325.0
+offset_top = 381.0
+offset_right = 490.0
+offset_bottom = 1397.0
+
+[node name="si" parent="." instance=ExtResource("9_ch4f4")]
+offset_left = 367.0
+offset_top = 382.0
+offset_right = 530.0
+offset_bottom = 1402.0
+
+[node name="do\'" parent="." instance=ExtResource("10_ra5oi")]
+offset_left = 409.0
+offset_top = 382.0
+offset_right = 644.0
+offset_bottom = 1817.0
+scale = Vector2(0.17, 0.17)
+
+[node name="re\'" parent="." instance=ExtResource("11_cb6p7")]
+offset_left = 449.219
+offset_top = 376.563
+offset_right = 616.219
+offset_bottom = 1386.56
+
+[node name="mi\'" parent="." instance=ExtResource("12_lkdmh")]
+offset_left = 491.406
+offset_top = 375.781
+offset_right = 659.406
+offset_bottom = 1392.78
+
+[node name="fa\'" parent="." instance=ExtResource("13_xr2sf")]
+offset_left = 532.813
+offset_top = 376.563
+offset_right = 691.813
+offset_bottom = 1382.56
+
+[node name="so\'" parent="." instance=ExtResource("14_e645w")]
+offset_left = 572.656
+offset_top = 375.781
+offset_right = 734.656
+offset_bottom = 1386.78
+
+[node name="la\'" parent="." instance=ExtResource("15_hnd75")]
+offset_left = 613.281
+offset_top = 376.563
+offset_right = 778.281
+offset_bottom = 1392.56
+
+[node name="si\'" parent="." instance=ExtResource("16_0s8ar")]
+offset_left = 655.469
+offset_top = 377.344
+offset_right = 818.469
+offset_bottom = 1397.34
+
+[node name="piano_score" type="Node2D" parent="."]
+position = Vector2(1154.49, 307.377)
+scale = Vector2(0.941578, 0.601337)
+script = SubResource("GDScript_cgu3c")
+
+[node name="Sprite2D" type="Sprite2D" parent="piano_score"]
+position = Vector2(-29.658, 51.3919)
+scale = Vector2(0.458411, 0.594103)
+texture = ExtResource("18_1ukyj")
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 105.469
+offset_top = -168.75
+offset_right = 193.469
+offset_bottom = -80.75
+icon = ExtResource("18_cgu3c")
+flat = true
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

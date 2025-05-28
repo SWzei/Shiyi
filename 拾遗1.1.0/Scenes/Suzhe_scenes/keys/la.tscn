@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://1auyqx4fwn1w"]
+
+[ext_resource type="Texture2D" uid="uid://7aevh5tstfih" path="res://assets/keys/la.png" id="1_a7hev"]
+[ext_resource type="Texture2D" uid="uid://dqbwpvf7pey1b" path="res://assets/keys/la_pressed.png" id="2_pqtjo"]
+[ext_resource type="Script" uid="uid://d1jm4py367tol" path="res://Scripts/Suzhe/piano/key_pressed.gd" id="3_mpbxg"]
+[ext_resource type="AudioStream" uid="uid://kmgc3qi66im4" path="res://assets/audios/audios_new/a2.mp3" id="4_s4l4v"]
+[ext_resource type="Texture2D" uid="uid://cr07p8avichmw" path="res://assets/pictures/大哭.jpg" id="5_s4l4v"]
+[ext_resource type="Script" uid="uid://y0pknc6lo1ds" path="res://Scripts/Suzhe/piano/drop.gd" id="5_x4776"]
+
+[sub_resource type="SystemFont" id="SystemFont_s4l4v"]
+subpixel_positioning = 0
+
+[node name="la" type="TextureButton"]
+offset_left = 266.0
+offset_top = 374.0
+offset_right = 431.0
+offset_bottom = 1390.0
+scale = Vector2(0.245, 0.245)
+toggle_mode = true
+texture_normal = ExtResource("1_a7hev")
+texture_pressed = ExtResource("2_pqtjo")
+script = ExtResource("3_mpbxg")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_s4l4v")
+
+[node name="Drop_sprite" type="Sprite2D" parent="."]
+position = Vector2(53.0612, -1232.65)
+scale = Vector2(0.355415, 0.355415)
+texture = ExtResource("5_s4l4v")
+script = ExtResource("5_x4776")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 8.1633
+offset_top = 836.735
+offset_right = 167.163
+offset_bottom = 1019.73
+theme_override_fonts/font = SubResource("SystemFont_s4l4v")
+theme_override_font_sizes/font_size = 60
+text = "la/6
+按h"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

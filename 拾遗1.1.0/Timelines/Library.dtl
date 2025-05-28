@@ -1,0 +1,7 @@
+join Librarian left
+Librarian: 欢迎来到南京大学！学校图书馆不仅拥有海量藏书供大家借阅，还为同学们打造了安静舒适的自习空间，期待大家在这里探索知识、潜心学习～
+leave Librarian
+Self: 南京大学？难道说......
+Self: 我回到了我的大学时期！
+Self: 可惜许多记忆都模糊了，希望能够找回这些美好的回忆...
+[signal arg="Finished"]
