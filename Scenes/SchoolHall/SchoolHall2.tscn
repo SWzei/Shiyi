@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1k4j3pttb1dg"]
+
+[ext_resource type="Script" uid="uid://d4cuf0pqdgfm0" path="res://Scripts/SchoolHall/SchoolHallMonologue.gd" id="1_wstu3"]
+[ext_resource type="Texture2D" uid="uid://wffct5rs50rf" path="res://Sprites/HallAndBuilding/Hall.jpg" id="2_dlnp3"]
+
+[node name="SchoolGate2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wstu3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dlnp3")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.25
+anchor_right = 0.9
+anchor_bottom = 0.75
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Monologue" type="Label" parent="PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(1300, 400)
+layout_mode = 2
+size_flags_vertical = 1
+autowrap_mode = 1

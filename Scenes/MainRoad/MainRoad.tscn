@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1hhp32p7u8k0"]
+
+[ext_resource type="Script" uid="uid://34rrdwx742ap" path="res://Scripts/MainRoad/MainRoad.gd" id="1_atkcp"]
+[ext_resource type="Texture2D" uid="uid://cksit78qbqu8a" path="res://Sprites/HallAndBuilding/MainRoad2.jpg" id="2_5mf61"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hrmhc"]
+font_size = 48
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.494118)
+
+[node name="MainRoad" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_atkcp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5mf61")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.725
+anchor_top = 0.919444
+anchor_right = 0.992188
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Enter以退出..."
+horizontal_alignment = 2
+vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Tips" type="Label" parent="."]
+modulate = Color(0.93, 0.93, 0.93, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -351.5
+offset_top = 336.0
+offset_right = 351.5
+offset_bottom = 406.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "耳畔响起了钟声，你驻足聆听……"
+label_settings = SubResource("LabelSettings_hrmhc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]

@@ -1,0 +1,4 @@
+join Classmate right
+Classmate: 同学，我们马上要在大礼堂举办音乐会，快来捧个场吧！
+leave Classmate
+[signal arg="Finished"]

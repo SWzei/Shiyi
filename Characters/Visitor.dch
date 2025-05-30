@@ -1,0 +1,40 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "StyleForAll",
+"suffix": ""
+},
+&"default_portrait": "Pose",
+&"description": "",
+&"display_name": "游客阿苏",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"Asking": {
+"export_overrides": {
+"image": "\"res://Sprites/GateLibrary/LittleFourASu.png\""
+},
+"mirror": false,
+"offset": Vector2(-50, 600),
+"scale": 1.2,
+"scene": ""
+},
+"Pose": {
+"export_overrides": {
+"image": "\"res://Sprites/GateLibrary/LittleFourASu.png\""
+},
+"mirror": false,
+"offset": Vector2(60, 430),
+"scale": 0.8,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

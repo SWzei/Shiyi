@@ -1,0 +1,13 @@
+join Visitor (Asking) left
+Visitor (Asking): 这位同学你好，我是从苏州来的，第一次来鼓楼校区，可以帮我拍张照吗？
+leave Visitor
+[wait time="1.0"]
+join Visitor (Pose) center
+[wait time="1.0"]
+[signal arg="Shooting"]
+[wait time="1.0"]
+leave Visitor
+join Visitor (Asking) left
+Visitor: 谢谢你！
+leave Visitor
+[signal arg="Finished"]

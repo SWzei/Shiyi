@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://omenjnijnvbe"
+path="res://.godot/imported/oskarpianist - One Summer's Day (钢琴班).ogg-04d5ef07c848284d331819ff5999d123.oggvorbisstr"
+
+[deps]
+
+source_file="res://Autio/oskarpianist - One Summer's Day (钢琴班).ogg"
+dest_files=["res://.godot/imported/oskarpianist - One Summer's Day (钢琴班).ogg-04d5ef07c848284d331819ff5999d123.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

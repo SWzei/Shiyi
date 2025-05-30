@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://2uesowv13yx7"]
+
+[ext_resource type="Texture2D" uid="uid://dbj05cldtdc2i" path="res://assets/keys/do.png" id="1_ugesq"]
+[ext_resource type="Texture2D" uid="uid://bvqt0gjntsepq" path="res://assets/keys/do_pressed.png" id="2_0hhfs"]
+[ext_resource type="Script" uid="uid://d1jm4py367tol" path="res://Scripts/Suzhe/piano/key_pressed.gd" id="3_bjcgr"]
+[ext_resource type="AudioStream" uid="uid://c8oroj6xe5sa6" path="res://assets/audios/audios_new/c3.mp3" id="4_ugesq"]
+[ext_resource type="Texture2D" uid="uid://bg0sjhmed4hc3" path="res://assets/pictures/考神附体.jpg" id="5_kin2r"]
+[ext_resource type="Script" uid="uid://y0pknc6lo1ds" path="res://Scripts/Suzhe/piano/drop.gd" id="6_nnu7v"]
+
+[sub_resource type="SystemFont" id="SystemFont_b87aj"]
+subpixel_positioning = 0
+
+[node name="do\'" type="TextureButton"]
+offset_right = 235.0
+offset_bottom = 1435.0
+scale = Vector2(0.245, 0.245)
+toggle_mode = true
+texture_normal = ExtResource("1_ugesq")
+texture_pressed = ExtResource("2_0hhfs")
+script = ExtResource("3_bjcgr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ugesq")
+
+[node name="Drop_sprite" type="Sprite2D" parent="."]
+position = Vector2(102.041, -1816.33)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_kin2r")
+script = ExtResource("6_nnu7v")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_top = 1175.51
+offset_right = 216.0
+offset_bottom = 1423.51
+theme_override_fonts/font = SubResource("SystemFont_b87aj")
+theme_override_font_sizes/font_size = 80
+text = "do/1
+按r"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

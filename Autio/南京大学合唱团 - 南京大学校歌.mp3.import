@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dforymjy15kcc"
+path="res://.godot/imported/南京大学合唱团 - 南京大学校歌.mp3-ab9c55f24ce54ae715ae8e4c0430bce4.mp3str"
+
+[deps]
+
+source_file="res://Autio/南京大学合唱团 - 南京大学校歌.mp3"
+dest_files=["res://.godot/imported/南京大学合唱团 - 南京大学校歌.mp3-ab9c55f24ce54ae715ae8e4c0430bce4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

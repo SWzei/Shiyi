@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1hojeoas2lil"
+path="res://.godot/imported/PianoPanda - Flower Dance（钢琴版I）.mp3-2c350e60696182798b0ee324d91faf9a.mp3str"
+
+[deps]
+
+source_file="res://Autio/PianoPanda - Flower Dance（钢琴版I）.mp3"
+dest_files=["res://.godot/imported/PianoPanda - Flower Dance（钢琴版I）.mp3-2c350e60696182798b0ee324d91faf9a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

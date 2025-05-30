@@ -1,0 +1,230 @@
+[gd_scene load_steps=21 format=3 uid="uid://dr3rkw31gfihg"]
+
+[ext_resource type="Script" uid="uid://ckrewpw8pqq4i" path="res://Scripts/Suzhe/piano/piano.gd" id="1_rkxpl"]
+[ext_resource type="PackedScene" uid="uid://b74c14jov5k3l" path="res://Scenes/Suzhe_scenes/keys/do.tscn" id="2_ys1d8"]
+[ext_resource type="PackedScene" uid="uid://bdoxtlw3iq5lp" path="res://Scenes/Suzhe_scenes/keys/re.tscn" id="3_vetfv"]
+[ext_resource type="PackedScene" uid="uid://wmmxecli6pdx" path="res://Scenes/Suzhe_scenes/keys/mi.tscn" id="4_dil3f"]
+[ext_resource type="PackedScene" uid="uid://g7w5smk12mgi" path="res://Scenes/Suzhe_scenes/keys/fa.tscn" id="5_doij8"]
+[ext_resource type="PackedScene" uid="uid://cm0giha4a3esn" path="res://Scenes/Suzhe_scenes/keys/so.tscn" id="6_avuo0"]
+[ext_resource type="PackedScene" uid="uid://1auyqx4fwn1w" path="res://Scenes/Suzhe_scenes/keys/la.tscn" id="7_l6773"]
+[ext_resource type="PackedScene" uid="uid://dyxt3gh5lt1pe" path="res://Scenes/Suzhe_scenes/keys/si.tscn" id="8_6gcyj"]
+[ext_resource type="PackedScene" uid="uid://2uesowv13yx7" path="res://Scenes/Suzhe_scenes/keys/do'.tscn" id="9_vg8sg"]
+[ext_resource type="PackedScene" uid="uid://c60jitft80hd7" path="res://Scenes/Suzhe_scenes/keys/re'.tscn" id="10_40a3g"]
+[ext_resource type="PackedScene" uid="uid://ct2stmkecdamy" path="res://Scenes/Suzhe_scenes/keys/mi'.tscn" id="11_3qldn"]
+[ext_resource type="PackedScene" uid="uid://bdm8ss8augj6g" path="res://Scenes/Suzhe_scenes/keys/fa'.tscn" id="12_muobo"]
+[ext_resource type="PackedScene" uid="uid://bai1h0j6qk6r7" path="res://Scenes/Suzhe_scenes/keys/so'.tscn" id="13_exwpx"]
+[ext_resource type="PackedScene" uid="uid://468onk8okvao" path="res://Scenes/Suzhe_scenes/keys/la'.tscn" id="14_p1826"]
+[ext_resource type="PackedScene" uid="uid://ct13mq3fuve6t" path="res://Scenes/Suzhe_scenes/keys/si'.tscn" id="15_yoeto"]
+[ext_resource type="Texture2D" uid="uid://ddg7r0p53v8tc" path="res://assets/pictures/背景.jpg" id="17_3qldn"]
+[ext_resource type="Script" uid="uid://pbbt4dwensq1" path="res://Scripts/Suzhe/piano/piano_score.gd" id="17_exwpx"]
+[ext_resource type="Texture2D" uid="uid://b3x506dvmrf8r" path="res://assets/music_score/NJU_school_song.png" id="17_muobo"]
+[ext_resource type="AudioStream" uid="uid://dforymjy15kcc" path="res://Autio/南京大学合唱团 - 南京大学校歌.mp3" id="19_exwpx"]
+[ext_resource type="Texture2D" uid="uid://cxexgomqyf2lp" path="res://Sprites/UI/panel-border-015.png" id="20_isyg1"]
+
+[node name="piano" type="Node2D"]
+position = Vector2(-112, 245)
+scale = Vector2(1.28, 1.28)
+script = ExtResource("1_rkxpl")
+
+[node name="background" type="Sprite2D" parent="."]
+visibility_layer = 4
+z_as_relative = false
+position = Vector2(831.25, 231.25)
+scale = Vector2(1.37457, 0.877865)
+texture = ExtResource("17_3qldn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 1
+offset_left = 109.0
+offset_top = 374.0
+offset_right = 706.0
+offset_bottom = 382.0
+color = Color(0, 0, 0, 1)
+
+[node name="do" parent="." instance=ExtResource("2_ys1d8")]
+offset_left = 128.125
+offset_top = 382.063
+offset_right = 363.125
+offset_bottom = 1817.06
+scale = Vector2(0.17, 0.17)
+
+[node name="re" parent="." instance=ExtResource("3_vetfv")]
+offset_left = 167.969
+offset_top = 378.938
+offset_right = 334.969
+offset_bottom = 1388.94
+
+[node name="mi" parent="." instance=ExtResource("4_dil3f")]
+offset_left = 207.813
+offset_top = 378.156
+offset_right = 375.813
+offset_bottom = 1395.16
+
+[node name="fa" parent="." instance=ExtResource("5_doij8")]
+offset_left = 249.219
+offset_top = 378.938
+offset_right = 408.219
+offset_bottom = 1384.94
+
+[node name="so" parent="." instance=ExtResource("6_avuo0")]
+offset_left = 287.5
+offset_top = 378.156
+offset_right = 449.5
+offset_bottom = 1389.16
+
+[node name="la" parent="." instance=ExtResource("7_l6773")]
+offset_left = 326.563
+offset_top = 378.156
+offset_right = 491.563
+offset_bottom = 1394.16
+
+[node name="si" parent="." instance=ExtResource("8_6gcyj")]
+offset_left = 367.0
+offset_top = 378.125
+offset_right = 530.0
+offset_bottom = 1398.13
+
+[node name="do\'" parent="." instance=ExtResource("9_vg8sg")]
+offset_left = 407.031
+offset_top = 382.031
+offset_right = 642.031
+offset_bottom = 1817.03
+scale = Vector2(0.17, 0.17)
+
+[node name="re\'" parent="." instance=ExtResource("10_40a3g")]
+offset_left = 446.094
+offset_top = 378.125
+offset_right = 613.094
+offset_bottom = 1388.12
+
+[node name="mi\'" parent="." instance=ExtResource("11_3qldn")]
+offset_left = 485.938
+offset_top = 377.344
+offset_right = 653.938
+offset_bottom = 1394.34
+
+[node name="fa\'" parent="." instance=ExtResource("12_muobo")]
+offset_left = 527.344
+offset_top = 377.344
+offset_right = 686.344
+offset_bottom = 1383.34
+
+[node name="so\'" parent="." instance=ExtResource("13_exwpx")]
+offset_left = 565.625
+offset_top = 375.781
+offset_right = 727.625
+offset_bottom = 1386.78
+
+[node name="la\'" parent="." instance=ExtResource("14_p1826")]
+offset_left = 604.688
+offset_top = 375.781
+offset_right = 769.688
+offset_bottom = 1391.78
+
+[node name="si\'" parent="." instance=ExtResource("15_yoeto")]
+offset_left = 644.531
+offset_top = 375.781
+offset_right = 807.531
+offset_bottom = 1395.78
+
+[node name="piano_score" type="Node2D" parent="."]
+position = Vector2(1154.49, 307.377)
+scale = Vector2(0.941578, 0.601337)
+script = ExtResource("17_exwpx")
+
+[node name="Sprite2D" type="Sprite2D" parent="piano_score"]
+position = Vector2(-29.658, 51.3919)
+scale = Vector2(0.458411, 0.594103)
+texture = ExtResource("17_muobo")
+
+[node name="school_song" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_exwpx")
+
+[node name="PlayButton" type="Button" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 1385.94
+offset_top = -159.375
+offset_right = 1535.94
+offset_bottom = -114.375
+theme_override_font_sizes/font_size = 24
+text = "播放校歌"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="PlayButton"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_isyg1")
+expand_mode = 1
+
+[node name="PlayButton2" type="Button" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 1385.94
+offset_top = -99.375
+offset_right = 1535.94
+offset_bottom = -54.3753
+theme_override_font_sizes/font_size = 24
+text = "播放乐曲"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="PlayButton2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_isyg1")
+expand_mode = 1
+
+[node name="StopButton" type="Button" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 1385.94
+offset_top = -39.375
+offset_right = 1535.94
+offset_bottom = 5.625
+theme_override_font_sizes/font_size = 24
+text = "暂停音乐"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="StopButton"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_isyg1")
+expand_mode = 1
+
+[node name="QuitButton" type="Button" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 114.844
+offset_top = -157.813
+offset_right = 264.844
+offset_bottom = -112.813
+theme_override_font_sizes/font_size = 24
+text = "演奏结束"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="QuitButton"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_isyg1")
+expand_mode = 1
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="PlayButton2" to="." method="_on_play_button_2_pressed"]
+[connection signal="pressed" from="StopButton" to="." method="_on_stop_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

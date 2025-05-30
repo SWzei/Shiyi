@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://mal837mywyh5"
+path="res://.godot/imported/Classical Artists - Etudes, Op_ 10_ No_ 3 in E Major.mp3-3eba5f1f3ca9f443627f68f73db43368.mp3str"
+
+[deps]
+
+source_file="res://Autio/Classical Artists - Etudes, Op_ 10_ No_ 3 in E Major.mp3"
+dest_files=["res://.godot/imported/Classical Artists - Etudes, Op_ 10_ No_ 3 in E Major.mp3-3eba5f1f3ca9f443627f68f73db43368.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

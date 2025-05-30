@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://g7w5smk12mgi"]
+
+[ext_resource type="Texture2D" uid="uid://3d0i248btcli" path="res://assets/keys/fa.png" id="1_wj23v"]
+[ext_resource type="Texture2D" uid="uid://4vcnr28wvl02" path="res://assets/keys/fa_pressed.png" id="2_rufsw"]
+[ext_resource type="Script" uid="uid://d1jm4py367tol" path="res://Scripts/Suzhe/piano/key_pressed.gd" id="3_sii86"]
+[ext_resource type="AudioStream" uid="uid://1o5g1qw2degr" path="res://assets/audios/audios_new/f2.mp3" id="4_tqech"]
+[ext_resource type="Texture2D" uid="uid://dg1qdacd18yy1" path="res://assets/pictures/爱你哦.jpg" id="5_tqech"]
+[ext_resource type="Script" uid="uid://y0pknc6lo1ds" path="res://Scripts/Suzhe/piano/drop.gd" id="6_d0w00"]
+
+[sub_resource type="SystemFont" id="SystemFont_tqech"]
+subpixel_positioning = 0
+
+[node name="fa" type="TextureButton"]
+offset_right = 159.0
+offset_bottom = 1006.0
+scale = Vector2(0.245, 0.245)
+toggle_mode = true
+texture_normal = ExtResource("1_wj23v")
+texture_pressed = ExtResource("2_rufsw")
+script = ExtResource("3_sii86")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_tqech")
+
+[node name="Drop_sprite" type="Sprite2D" parent="."]
+position = Vector2(61.2245, -1253.06)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_tqech")
+script = ExtResource("6_d0w00")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 829.0
+offset_right = 155.0
+offset_bottom = 1008.0
+theme_override_fonts/font = SubResource("SystemFont_tqech")
+theme_override_font_sizes/font_size = 60
+text = "fa/4
+按f"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

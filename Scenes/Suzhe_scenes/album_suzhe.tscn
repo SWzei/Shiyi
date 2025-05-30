@@ -1,0 +1,316 @@
+[gd_scene load_steps=13 format=3 uid="uid://dnmlxhj10b2m2"]
+
+[ext_resource type="Script" uid="uid://ui4junsf0lv0" path="res://Scripts/Suzhe/album_suzhe.gd" id="1_7m5sf"]
+[ext_resource type="Texture2D" uid="uid://b61bwy8k20kpg" path="res://assets/scenes/相册.png" id="3_7u26l"]
+[ext_resource type="Texture2D" uid="uid://drk8wjlsfaudg" path="res://Sprites/Elements/桌面.png" id="3_p4aho"]
+[ext_resource type="Texture2D" uid="uid://bbcioi5egfkuk" path="res://assets/scenes/相册（翻开）.png" id="4_tyw26"]
+[ext_resource type="Texture2D" uid="uid://dfrogxf3m07bo" path="res://Sprites/UI/shadedDark25.png" id="5_tyw26"]
+[ext_resource type="Texture2D" uid="uid://bib2wmvlvjoqp" path="res://Sprites/Structures/Suzhe/picture1.jpg" id="5_uqip2"]
+[ext_resource type="Texture2D" uid="uid://dn435utmmx8r6" path="res://Sprites/Structures/Suzhe/picture2.png" id="6_5l1be"]
+[ext_resource type="Texture2D" uid="uid://o112a3f74mlp" path="res://Sprites/UI/shadedDark24.png" id="6_8pxsc"]
+[ext_resource type="Texture2D" uid="uid://cxexgomqyf2lp" path="res://Sprites/UI/panel-border-015.png" id="7_l6xlp"]
+[ext_resource type="Texture2D" uid="uid://c17aqx82271np" path="res://Sprites/UI/shadedDark47.png" id="8_uqip2"]
+[ext_resource type="Texture2D" uid="uid://6pkig8wvhrti" path="res://Sprites/Structures/Suzhe/picture3.png" id="9_oingd"]
+[ext_resource type="Texture2D" uid="uid://denw64tylgn1h" path="res://Sprites/Structures/Suzhe/picture4.png" id="10_fbhml"]
+
+[node name="album_suzhe" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7m5sf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_p4aho")
+
+[node name="Cover" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = -72.0
+offset_right = 1604.0
+offset_bottom = 1142.0
+mouse_filter = 0
+texture = ExtResource("3_7u26l")
+
+[node name="PageContainer" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PageBackground" type="TextureRect" parent="PageContainer"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = -108.0
+offset_right = 1420.0
+offset_bottom = 916.0
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_tyw26")
+
+[node name="Page1" type="Control" parent="PageContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect1" type="TextureRect" parent="PageContainer/Page1"]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 241.0
+offset_right = 5002.0
+offset_bottom = 3716.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("5_uqip2")
+
+[node name="TextureRect2" type="TextureRect" parent="PageContainer/Page1"]
+layout_mode = 0
+offset_left = 1093.0
+offset_top = 240.0
+offset_right = 2233.0
+offset_bottom = 1072.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_5l1be")
+
+[node name="Button1" type="Button" parent="PageContainer/Page1"]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 424.0
+offset_right = 616.0
+offset_bottom = 474.0
+text = "放入图片"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="PageContainer/Page1/Button1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_l6xlp")
+
+[node name="Button2" type="Button" parent="PageContainer/Page1"]
+layout_mode = 0
+offset_left = 1306.0
+offset_top = 424.0
+offset_right = 1466.0
+offset_bottom = 474.0
+text = "放入图片"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="PageContainer/Page1/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_l6xlp")
+
+[node name="CloseButton1" type="Button" parent="PageContainer/Page1"]
+layout_mode = 0
+offset_left = 839.0
+offset_top = 226.0
+offset_right = 927.0
+offset_bottom = 314.0
+scale = Vector2(0.6, 0.6)
+icon = ExtResource("8_uqip2")
+flat = true
+
+[node name="CloseButton2" type="Button" parent="PageContainer/Page1"]
+layout_mode = 0
+offset_left = 1681.0
+offset_top = 226.0
+offset_right = 1769.0
+offset_bottom = 314.0
+scale = Vector2(0.6, 0.6)
+icon = ExtResource("8_uqip2")
+flat = true
+
+[node name="LineEdit1" type="LineEdit" parent="PageContainer/Page1"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 792.0
+offset_right = 688.0
+offset_bottom = 842.0
+theme_override_font_sizes/font_size = 30
+placeholder_text = "待命名"
+alignment = 1
+flat = true
+
+[node name="LineEdit2" type="LineEdit" parent="PageContainer/Page1"]
+layout_mode = 0
+offset_left = 1248.0
+offset_top = 792.0
+offset_right = 1548.0
+offset_bottom = 842.0
+theme_override_font_sizes/font_size = 30
+placeholder_text = "待命名"
+alignment = 1
+flat = true
+
+[node name="Page2" type="Control" parent="PageContainer"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect3" type="TextureRect" parent="PageContainer/Page2"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 215.0
+offset_right = 1071.0
+offset_bottom = 1251.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("9_oingd")
+
+[node name="TextureRect4" type="TextureRect" parent="PageContainer/Page2"]
+layout_mode = 0
+offset_left = 1091.0
+offset_top = 253.0
+offset_right = 2135.0
+offset_bottom = 952.0
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("10_fbhml")
+
+[node name="Button3" type="Button" parent="PageContainer/Page2"]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 424.0
+offset_right = 616.0
+offset_bottom = 474.0
+text = "放入图片"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="PageContainer/Page2/Button3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_l6xlp")
+
+[node name="Button4" type="Button" parent="PageContainer/Page2"]
+layout_mode = 0
+offset_left = 1306.0
+offset_top = 424.0
+offset_right = 1466.0
+offset_bottom = 474.0
+text = "放入图片"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="PageContainer/Page2/Button4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_l6xlp")
+
+[node name="CloseButton3" type="Button" parent="PageContainer/Page2"]
+layout_mode = 0
+offset_left = 839.0
+offset_top = 226.0
+offset_right = 927.0
+offset_bottom = 314.0
+scale = Vector2(0.6, 0.6)
+icon = ExtResource("8_uqip2")
+flat = true
+
+[node name="CloseButton4" type="Button" parent="PageContainer/Page2"]
+layout_mode = 0
+offset_left = 1681.0
+offset_top = 226.0
+offset_right = 1769.0
+offset_bottom = 314.0
+scale = Vector2(0.6, 0.6)
+icon = ExtResource("8_uqip2")
+flat = true
+
+[node name="LineEdit3" type="LineEdit" parent="PageContainer/Page2"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 792.0
+offset_right = 688.0
+offset_bottom = 842.0
+theme_override_font_sizes/font_size = 30
+placeholder_text = "待命名"
+alignment = 1
+flat = true
+
+[node name="LineEdit4" type="LineEdit" parent="PageContainer/Page2"]
+layout_mode = 0
+offset_left = 1248.0
+offset_top = 792.0
+offset_right = 1548.0
+offset_bottom = 842.0
+theme_override_font_sizes/font_size = 30
+placeholder_text = "待命名"
+alignment = 1
+flat = true
+
+[node name="PreButton" type="Button" parent="PageContainer"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 961.0
+offset_right = 186.0
+offset_bottom = 1049.0
+icon = ExtResource("6_8pxsc")
+flat = true
+
+[node name="NextButton" type="Button" parent="PageContainer"]
+layout_mode = 0
+offset_left = 1726.0
+offset_top = 963.0
+offset_right = 1814.0
+offset_bottom = 1051.0
+icon = ExtResource("5_tyw26")
+flat = true
+
+[node name="ExitButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1645.0
+offset_top = 62.0
+offset_right = 1805.0
+offset_bottom = 112.0
+text = "退出相册"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="ExitButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_l6xlp")
+
+[connection signal="gui_input" from="Cover" to="." method="_on_cover_gui_input"]
+[connection signal="pressed" from="PageContainer/Page1/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="PageContainer/Page1/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="PageContainer/Page1/CloseButton1" to="." method="_on_close_button_1_pressed"]
+[connection signal="pressed" from="PageContainer/Page1/CloseButton2" to="." method="_on_close_button_2_pressed"]
+[connection signal="text_submitted" from="PageContainer/Page1/LineEdit1" to="." method="_on_line_edit_1_text_submitted"]
+[connection signal="text_submitted" from="PageContainer/Page1/LineEdit2" to="." method="_on_line_edit_2_text_submitted"]
+[connection signal="pressed" from="PageContainer/Page2/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="PageContainer/Page2/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="PageContainer/Page2/CloseButton3" to="." method="_on_close_button_3_pressed"]
+[connection signal="pressed" from="PageContainer/Page2/CloseButton4" to="." method="_on_close_button_4_pressed"]
+[connection signal="text_submitted" from="PageContainer/Page2/LineEdit3" to="." method="_on_line_edit_3_text_submitted"]
+[connection signal="text_submitted" from="PageContainer/Page2/LineEdit4" to="." method="_on_line_edit_4_text_submitted"]
+[connection signal="pressed" from="PageContainer/PreButton" to="." method="_on_pre_button_pressed"]
+[connection signal="pressed" from="PageContainer/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

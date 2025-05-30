@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfgkccvqokdu"]
+
+[ext_resource type="Script" uid="uid://0dgsmkvephgv" path="res://Scripts/NorthBuilding/NorthBuildingtalk.gd" id="1_m7j14"]
+[ext_resource type="Texture2D" uid="uid://cbud1klk7oug8" path="res://Sprites/HallAndBuilding/NorthBuilding.jpg" id="2_8ke6a"]
+
+[node name="NorthBuilding" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m7j14")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8ke6a")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0wm4co7vpsdc"]
+
+[ext_resource type="Texture2D" uid="uid://cp6gg0m403gu2" path="res://assets/音乐会图片/林泉标志.jpg" id="1_axwbq"]
+[ext_resource type="Script" uid="uid://x5c2f0ewb3ta" path="res://Scripts/Suzhe/piano/photo_show.gd" id="1_nelit"]
+[ext_resource type="Texture2D" uid="uid://ddg7r0p53v8tc" path="res://assets/pictures/背景.jpg" id="1_sufqk"]
+[ext_resource type="Texture2D" uid="uid://tj84d7cjioki" path="res://assets/音乐会图片/流行.jpg" id="2_sufqk"]
+[ext_resource type="Texture2D" uid="uid://oo3hdhbkc2hi" path="res://assets/音乐会图片/古典.jpg" id="3_nelit"]
+
+[node name="PhotoShow" type="Node2D"]
+script = ExtResource("1_nelit")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(960.5, 536.25)
+scale = Vector2(1.7713, 1.10169)
+texture = ExtResource("1_sufqk")
+
+[node name="Texture1" type="TextureRect" parent="."]
+offset_left = 555.0
+offset_top = 222.0
+offset_right = 2440.0
+offset_bottom = 1552.0
+scale = Vector2(0.405, 0.405)
+texture = ExtResource("1_axwbq")
+
+[node name="Texture2" type="TextureRect" parent="."]
+offset_left = 1155.0
+offset_top = 87.0
+offset_right = 3075.0
+offset_bottom = 1167.0
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("2_sufqk")
+
+[node name="Texture3" type="TextureRect" parent="."]
+offset_left = 47.0
+offset_top = 475.0
+offset_right = 2090.0
+offset_bottom = 1750.0
+scale = Vector2(0.415, 0.415)
+texture = ExtResource("3_nelit")

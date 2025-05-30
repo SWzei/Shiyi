@@ -1,0 +1,6 @@
+join Timelines/narrator left
+Timelines/narrator: 同学们好！我是南大校史馆的讲解员仙儿。
+Timelines/narrator: 下面我们一起参观南大校史馆吧！
+Timelines/narrator: 但在开始之前，我要先考考你们，看看你们对南大校史的了解程度哦...
+leave Timelines/narrator
+[signal arg="finished"]

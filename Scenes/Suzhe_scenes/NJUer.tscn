@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://bc6e45w73b7lt"]
+
+[ext_resource type="Script" uid="uid://idk0d5p0wlk7" path="res://Scripts/Suzhe/njuer.gd" id="1_dwdsx"]
+[ext_resource type="Texture2D" uid="uid://2ipstwsx5qy4" path="res://Sprites/Character/1/1.png" id="2_iusyy"]
+[ext_resource type="Texture2D" uid="uid://c00qaillmf3ol" path="res://Sprites/Character/1/2.png" id="3_phxf0"]
+[ext_resource type="Texture2D" uid="uid://ujbwi5pgk0x6" path="res://Sprites/Character/1/3.png" id="4_igt1s"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5j24r"]
+radius = 70.0
+height = 206.667
+
+[sub_resource type="Animation" id="Animation_3smsa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_iusyy")]
+}
+
+[sub_resource type="Animation" id="Animation_x3wgy"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_phxf0")]
+}
+
+[sub_resource type="Animation" id="Animation_8erm5"]
+resource_name = "move"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_phxf0"), ExtResource("2_iusyy"), ExtResource("4_igt1s"), ExtResource("2_iusyy"), ExtResource("3_phxf0")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f1ek2"]
+_data = {
+&"RESET": SubResource("Animation_3smsa"),
+&"idle": SubResource("Animation_x3wgy"),
+&"move": SubResource("Animation_8erm5")
+}
+
+[node name="NJUer" type="CharacterBody2D"]
+script = ExtResource("1_dwdsx")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_iusyy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+scale = Vector2(0.3, 0.3)
+shape = SubResource("CapsuleShape2D_5j24r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_f1ek2")
+}

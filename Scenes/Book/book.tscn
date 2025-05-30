@@ -1,0 +1,883 @@
+[gd_scene load_steps=24 format=3 uid="uid://dllcpcm8hmxea"]
+
+[ext_resource type="Script" uid="uid://boklu6dvmmy07" path="res://Scripts/Main/book.gd" id="1_fpxot"]
+[ext_resource type="Texture2D" uid="uid://drk8wjlsfaudg" path="res://Sprites/Elements/桌面.png" id="2_aulyy"]
+[ext_resource type="Texture2D" uid="uid://dwjxqklqa0dfm" path="res://Sprites/Elements/张开的书.jpg" id="2_r2be8"]
+[ext_resource type="FontFile" uid="uid://c61jh50ymuf6u" path="res://assets/Fonts/FangZhengFangSong-GBK-1.ttf" id="3_cxka2"]
+[ext_resource type="Script" uid="uid://d1wc1d6hmuiw8" path="res://Scripts/Book/transition.gd" id="4_1ksjd"]
+[ext_resource type="Script" uid="uid://thmj6w17m8xi" path="res://Scripts/Book/Page北大楼.gd" id="4_ebb4q"]
+[ext_resource type="Texture2D" uid="uid://lansgvssevq5" path="res://Sprites/Structures/北大楼.png" id="5_rf2l0"]
+[ext_resource type="Script" uid="uid://bpgwpse25x742" path="res://Scripts/Book/Page图书馆.gd" id="6_ieeyy"]
+[ext_resource type="Texture2D" uid="uid://dpi6wdq3h0qov" path="res://Sprites/Structures/SchoolHistoryMuseum/SchoolHistoryMuseum.jpg" id="9_2yfpm"]
+[ext_resource type="Script" uid="uid://baeso3t6ni7sv" path="res://Scripts/Book/Page校史馆.gd" id="9_dgru0"]
+[ext_resource type="Script" uid="uid://c28mlcwrmyav1" path="res://Scripts/Book/Page大礼堂.gd" id="11_87dft"]
+[ext_resource type="Script" uid="uid://qk7ahgk505ga" path="res://Scripts/Book/Page苏浙运动场.gd" id="12_75fxu"]
+[ext_resource type="Texture2D" uid="uid://bs5n45g63j413" path="res://Sprites/Structures/大礼堂2.jpg" id="12_hswn0"]
+[ext_resource type="Texture2D" uid="uid://o112a3f74mlp" path="res://Sprites/UI/shadedDark24.png" id="14_2chv5"]
+[ext_resource type="Texture2D" uid="uid://cxexgomqyf2lp" path="res://Sprites/UI/panel-border-015.png" id="14_bw87j"]
+[ext_resource type="Texture2D" uid="uid://dxthj2ips1e1b" path="res://Sprites/Book/sz1.png" id="14_rhh02"]
+[ext_resource type="Texture2D" uid="uid://dfrogxf3m07bo" path="res://Sprites/UI/shadedDark25.png" id="15_bw87j"]
+[ext_resource type="Texture2D" uid="uid://bt8bvkghpoou1" path="res://Sprites/Book/sz2.png" id="15_ip0a6"]
+[ext_resource type="Texture2D" uid="uid://cabipn1eqsj1u" path="res://Sprites/Book/sz3.png" id="16_8b7ae"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1ksjd"]
+font = ExtResource("3_cxka2")
+font_size = 42
+outline_size = 1
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.521569)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_aulyy"]
+font = ExtResource("3_cxka2")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.509804)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ebb4q"]
+font = ExtResource("3_cxka2")
+font_size = 28
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.541176)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rf2l0"]
+font = ExtResource("3_cxka2")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+outline_size = 1
+outline_color = Color(0.53, 0.53, 0.53, 1)
+shadow_size = 0
+
+[node name="Book" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fpxot")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aulyy")
+
+[node name="BookBackground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -837.0
+offset_top = -540.0
+offset_right = 358.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("2_r2be8")
+stretch_mode = 3
+
+[node name="Transition" type="Panel" parent="."]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_1ksjd")
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="text" type="Label" parent="Transition"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -100.0
+offset_right = 500.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "    此时，你突然产生了进一步了解南大校史的冲动，忽然记起南大的校史博物馆，决定前去参观。"
+label_settings = SubResource("LabelSettings_1ksjd")
+autowrap_mode = 1
+
+[node name="地点" type="Node2D" parent="."]
+
+[node name="图书馆" type="Node2D" parent="地点"]
+visible = false
+position = Vector2(123, 0)
+scale = Vector2(1.4, 1.4)
+script = ExtResource("6_ieeyy")
+
+[node name="Title" type="Label" parent="地点/图书馆"]
+offset_left = 130.714
+offset_top = 110.0
+offset_right = 370.714
+offset_bottom = 201.0
+text = "图书馆"
+label_settings = SubResource("LabelSettings_aulyy")
+
+[node name="Subtitle" type="Label" parent="地点/图书馆"]
+offset_left = 89.2857
+offset_top = 274.286
+offset_right = 179.286
+offset_bottom = 309.286
+text = "子标题"
+label_settings = SubResource("LabelSettings_ebb4q")
+
+[node name="Tips" type="Label" parent="地点/图书馆"]
+visible = false
+offset_left = 108.0
+offset_top = 249.0
+offset_right = 564.0
+offset_bottom = 324.0
+text = "找回了这部分的回忆， 那就在笔记上写些什么吧。
+（选择你最想写进笔记的一段话）"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 3
+
+[node name="Button1" type="Button" parent="地点/图书馆"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 150.0
+offset_top = 320.0
+offset_right = 350.0
+offset_bottom = 360.0
+text = "自习区的无声共鸣"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="地点/图书馆/Button1"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_bw87j")
+
+[node name="Button2" type="Button" parent="地点/图书馆"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 150.0
+offset_top = 386.429
+offset_right = 350.0
+offset_bottom = 426.429
+text = "书架迷宫里的寻宝之旅"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="地点/图书馆/Button2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_bw87j")
+
+[node name="Content1" type="Label" parent="地点/图书馆"]
+offset_left = 129.0
+offset_top = 414.286
+offset_right = 540.0
+offset_bottom = 690.286
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 1
+
+[node name="Content2" type="Label" parent="地点/图书馆"]
+offset_left = 677.143
+offset_top = 70.7143
+offset_right = 1088.14
+offset_bottom = 275.714
+text = "    南京大学图书馆为我的本科生活注入了丰富内涵与持久力量。它是知识的宝库，浩如烟海的文献资料，助力我在论文撰写、课程学习中探索未知，与古今思想对话，搭建起扎实的知识框架；也是成长的见证者，从晨光熹微到夜色深沉，那些在自习区伏案疾书、与难题博弈的日夜，那些因灵感迸发而雀跃的瞬间，都在图书馆的静谧氛围中沉淀为成长的养分。"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 1
+
+[node name="Content3" type="Label" parent="地点/图书馆"]
+offset_left = 673.571
+offset_top = 289.286
+offset_right = 1084.58
+offset_bottom = 494.286
+text = "    这里更是情感的寄托之所，三楼窗边的 “专属领地”，四季变换的风景与书香交织，成为心灵休憩的港湾。闭馆时管理员的轻声催促，同伴间心照不宣的默契，让图书馆充满温暖的人情味。本科岁月因图书馆而充实丰盈，它不仅是学习的殿堂，更化作精神灯塔，指引着我在未来的人生路上，永葆对知识的热忱与探索的勇气。"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="地点/图书馆"]
+offset_left = 722.143
+offset_top = 515.714
+offset_right = 1970.14
+offset_bottom = 1347.71
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rf2l0")
+
+[node name="教学楼" type="Node2D" parent="地点"]
+visible = false
+position = Vector2(123, 0)
+scale = Vector2(1.4, 1.4)
+script = ExtResource("6_ieeyy")
+sequence = 1
+
+[node name="Title" type="Label" parent="地点/教学楼"]
+offset_left = 130.714
+offset_top = 110.0
+offset_right = 370.714
+offset_bottom = 201.0
+text = "图书馆"
+label_settings = SubResource("LabelSettings_aulyy")
+
+[node name="Subtitle" type="Label" parent="地点/教学楼"]
+offset_left = 89.2857
+offset_top = 274.286
+offset_right = 179.286
+offset_bottom = 309.286
+text = "子标题"
+label_settings = SubResource("LabelSettings_ebb4q")
+
+[node name="Tips" type="Label" parent="地点/教学楼"]
+visible = false
+offset_left = 108.0
+offset_top = 249.0
+offset_right = 564.0
+offset_bottom = 324.0
+text = "找回了这部分的回忆， 那就在笔记上写些什么吧。
+（选择你最想写进笔记的一段话）"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 3
+
+[node name="Button1" type="Button" parent="地点/教学楼"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 150.0
+offset_top = 320.0
+offset_right = 350.0
+offset_bottom = 360.0
+text = "自习区的无声共鸣"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="地点/教学楼/Button1"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_bw87j")
+
+[node name="Button2" type="Button" parent="地点/教学楼"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 150.0
+offset_top = 386.429
+offset_right = 350.0
+offset_bottom = 426.429
+text = "书架迷宫里的寻宝之旅"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="地点/教学楼/Button2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_bw87j")
+
+[node name="Content1" type="Label" parent="地点/教学楼"]
+offset_left = 129.0
+offset_top = 414.286
+offset_right = 540.0
+offset_bottom = 690.286
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 1
+
+[node name="Content2" type="Label" parent="地点/教学楼"]
+offset_left = 677.143
+offset_top = 70.7143
+offset_right = 1088.14
+offset_bottom = 275.714
+text = "    南京大学图书馆为我的本科生活注入了丰富内涵与持久力量。它是知识的宝库，浩如烟海的文献资料，助力我在论文撰写、课程学习中探索未知，与古今思想对话，搭建起扎实的知识框架；也是成长的见证者，从晨光熹微到夜色深沉，那些在自习区伏案疾书、与难题博弈的日夜，那些因灵感迸发而雀跃的瞬间，都在图书馆的静谧氛围中沉淀为成长的养分。"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 1
+
+[node name="Content3" type="Label" parent="地点/教学楼"]
+offset_left = 673.571
+offset_top = 289.286
+offset_right = 1084.58
+offset_bottom = 494.286
+text = "    这里更是情感的寄托之所，三楼窗边的 “专属领地”，四季变换的风景与书香交织，成为心灵休憩的港湾。闭馆时管理员的轻声催促，同伴间心照不宣的默契，让图书馆充满温暖的人情味。本科岁月因图书馆而充实丰盈，它不仅是学习的殿堂，更化作精神灯塔，指引着我在未来的人生路上，永葆对知识的热忱与探索的勇气。"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="地点/教学楼"]
+offset_left = 722.143
+offset_top = 515.714
+offset_right = 1970.14
+offset_bottom = 1347.71
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rf2l0")
+
+[node name="北大楼" type="Node2D" parent="地点"]
+visible = false
+position = Vector2(123, 0)
+scale = Vector2(1.4, 1.4)
+script = ExtResource("4_ebb4q")
+sequence = 2
+
+[node name="Title" type="Label" parent="地点/北大楼"]
+offset_left = 130.714
+offset_top = 110.0
+offset_right = 370.714
+offset_bottom = 201.0
+text = "北大楼"
+label_settings = SubResource("LabelSettings_aulyy")
+
+[node name="Subtitle" type="Label" parent="地点/北大楼"]
+offset_left = 89.2857
+offset_top = 274.286
+offset_right = 179.286
+offset_bottom = 309.286
+text = "子标题"
+label_settings = SubResource("LabelSettings_ebb4q")
+
+[node name="Tips" type="Label" parent="地点/北大楼"]
+visible = false
+offset_left = 108.0
+offset_top = 249.0
+offset_right = 564.0
+offset_bottom = 324.0
+text = "找回了这部分的回忆， 那就在笔记上写些什么吧。
+（选择你最想写进笔记的一段话）"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 3
+
+[node name="Button1" type="Button" parent="地点/北大楼"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 150.0
+offset_top = 320.0
+offset_right = 350.0
+offset_bottom = 360.0
+text = "	光影下的青春打卡地"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="地点/北大楼/Button1"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_bw87j")
+
+[node name="Button2" type="Button" parent="地点/北大楼"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 150.0
+offset_top = 380.0
+offset_right = 350.0
+offset_bottom = 420.0
+text = "心灵栖息的静谧港湾"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="地点/北大楼/Button2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_bw87j")
+
+[node name="Button3" type="Button" parent="地点/北大楼"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 150.0
+offset_top = 440.0
+offset_right = 350.0
+offset_bottom = 480.0
+text = "砖石铭刻的岁月丰碑"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="地点/北大楼/Button3"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_bw87j")
+
+[node name="Content1" type="Label" parent="地点/北大楼"]
+offset_left = 129.0
+offset_top = 375.714
+offset_right = 540.0
+offset_bottom = 651.714
+text = "    校外的游客总好奇，为什么毕业生要在这栋“旧楼” 前停留这么久。他们不知道，当我们把掌心按在 “1919” 的旧刻上，指纹会与历史的掌纹重叠；当学士帽掠过门楣的雕花，扬起的不仅是毕业的喜悦，更是与百年文脉的轻轻触碰。快门声落，定格的不只是个体的毕业时刻，更是一代人与一座精神地标的双向奔赴。"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 1
+
+[node name="Content2" type="Label" parent="地点/北大楼"]
+offset_left = 677.143
+offset_top = 90.7143
+offset_right = 1088.14
+offset_bottom = 295.714
+text = "    校外的游客总好奇，为什么毕业生要在这栋 “旧楼” 前停留这么久。他们不知道，当我们把掌心按在“1919”的旧刻上，指纹会与历史的掌纹重叠；当学士帽掠过门楣的雕花，扬起的不仅是毕业的喜悦，更是与百年文脉的轻轻触碰。快门声落，定格的不只是个体的毕业时刻，更是一代人与一座精神地标的双向奔赴。"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 1
+
+[node name="Content3" type="Label" parent="地点/北大楼"]
+offset_left = 674.286
+offset_top = 315.714
+offset_right = 1085.29
+offset_bottom = 515.714
+text = "　　如今路过北大楼，仍会看见新的毕业生重复着我们当年的动作：侧身让开爬满墙面的爬山虎，微微仰头让阳光落在笑靥上。而砖缝里的青苔又深了一层，檐角铜铃在快门声中轻轻摇晃，像在说：瞧，又一群星星要从这里启航了。"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="地点/北大楼"]
+offset_left = 722.143
+offset_top = 495.0
+offset_right = 1970.14
+offset_bottom = 1327.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_rf2l0")
+
+[node name="校史馆" type="Node2D" parent="地点"]
+visible = false
+position = Vector2(123, 0)
+scale = Vector2(1.4, 1.4)
+script = ExtResource("9_dgru0")
+sequence = 3
+
+[node name="Title" type="Label" parent="地点/校史馆"]
+offset_left = 130.714
+offset_top = 110.0
+offset_right = 370.714
+offset_bottom = 201.0
+text = "校史馆"
+label_settings = SubResource("LabelSettings_aulyy")
+
+[node name="Subtitle" type="Label" parent="地点/校史馆"]
+offset_left = 89.2857
+offset_top = 274.286
+offset_right = 179.286
+offset_bottom = 309.286
+text = "子标题"
+label_settings = SubResource("LabelSettings_ebb4q")
+
+[node name="Tips" type="Label" parent="地点/校史馆"]
+visible = false
+offset_left = 108.0
+offset_top = 249.0
+offset_right = 564.0
+offset_bottom = 324.0
+text = "找回了这部分的回忆， 那就在笔记上写些什么吧。
+（选择你最想写进笔记的一段话）"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 3
+
+[node name="Button1" type="Button" parent="地点/校史馆"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 150.0
+offset_top = 320.0
+offset_right = 350.0
+offset_bottom = 360.0
+text = "序厅凝岁月"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="地点/校史馆/Button1"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_bw87j")
+
+[node name="Button2" type="Button" parent="地点/校史馆"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 150.0
+offset_top = 380.0
+offset_right = 350.0
+offset_bottom = 420.0
+text = "照片藏春秋"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="地点/校史馆/Button2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_bw87j")
+
+[node name="Content1" type="Label" parent="地点/校史馆"]
+offset_left = 129.0
+offset_top = 342.857
+offset_right = 540.0
+offset_bottom = 618.857
+text = "    校外的游客总好奇，为什么毕业生要在这栋 “旧楼” 前停留这么久。他们不知道，当我们把掌心按在 “1919” 的旧刻上，指纹会与历史的掌纹重叠；当学士帽掠过门楣的雕花，扬起的不仅是毕业的喜悦，更是与百年文脉的轻轻触碰。快门声落，定格的不只是个体的毕业时刻，更是一代人与一座精神地标的双向奔赴。"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 1
+
+[node name="Content2" type="Label" parent="地点/校史馆"]
+offset_left = 677.143
+offset_top = 90.7143
+offset_right = 1088.14
+offset_bottom = 295.714
+text = "    当指尖轻轻拂过展柜玻璃，那些静默的照片与泛黄的史料忽然有了温度。从序厅古朴的校训到展区斑驳的影像，校史馆不仅是凝固的历史标本，更是一座流动的精神灯塔。在这里，我看见民国学子眼中燃烧的理想火种，化作了今日实验室里彻夜不熄的灯光；听见西迁路上的脚步，与现代学子奔赴边疆支教的足音悄然重合。"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 1
+
+[node name="Content3" type="Label" parent="地点/校史馆"]
+offset_left = 674.286
+offset_top = 315.714
+offset_right = 1085.29
+offset_bottom = 515.714
+text = "    这些跨越时空的画面，让我忽然懂得：所谓校史，从来不是尘封的过往，而是一条奔腾不息的精神长河。那些照片里定格的每一个瞬间，都在诉说着南大人一脉相承的信念 —— 在动荡中坚守，于变革中创新，用 “嚼得菜根，做得大事” 的坚韧，将个人理想融入时代洪流。此刻回望展区中熙熙攘攘的参观者，我知道这份精神火炬，正由我们亲手传递，在新时代的浪潮里，继续照亮求知的征途，续写属于未来的百年传奇。"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="地点/校史馆"]
+offset_left = 768.571
+offset_top = 587.143
+offset_right = 2688.57
+offset_bottom = 1667.14
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("9_2yfpm")
+
+[node name="大礼堂" type="Node2D" parent="地点"]
+visible = false
+position = Vector2(123, 0)
+scale = Vector2(1.4, 1.4)
+script = ExtResource("11_87dft")
+sequence = 4
+
+[node name="Title" type="Label" parent="地点/大礼堂"]
+offset_left = 130.714
+offset_top = 110.0
+offset_right = 370.714
+offset_bottom = 201.0
+text = "大礼堂"
+label_settings = SubResource("LabelSettings_aulyy")
+
+[node name="Subtitle" type="Label" parent="地点/大礼堂"]
+offset_left = 89.2857
+offset_top = 274.286
+offset_right = 179.286
+offset_bottom = 309.286
+text = "子标题"
+label_settings = SubResource("LabelSettings_ebb4q")
+
+[node name="Tips" type="Label" parent="地点/大礼堂"]
+visible = false
+offset_left = 107.857
+offset_top = 249.286
+offset_right = 556.857
+offset_bottom = 319.286
+text = "找回了这部分的回忆， 那就在笔记上写些什么吧。
+（选择你最想写进笔记的一段话）"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 3
+
+[node name="Button1" type="Button" parent="地点/大礼堂"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 150.0
+offset_top = 320.0
+offset_right = 350.0
+offset_bottom = 360.0
+text = "	聚光灯下的璀璨舞台"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="地点/大礼堂/Button1"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_bw87j")
+
+[node name="Button2" type="Button" parent="地点/大礼堂"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 150.0
+offset_top = 380.0
+offset_right = 350.0
+offset_bottom = 420.0
+text = "思想碰撞的智慧殿堂"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="地点/大礼堂/Button2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_bw87j")
+
+[node name="Content1" type="Label" parent="地点/大礼堂"]
+offset_left = 129.0
+offset_top = 357.857
+offset_right = 540.0
+offset_bottom = 633.857
+text = "    校外的游客总好奇，为什么毕业生要在这栋 “旧楼” 前停留这么久。他们不知道，当我们把掌心按在 “1919” 的旧刻上，指纹会与历史的掌纹重叠；当学士帽掠过门楣的雕花，扬起的不仅是毕业的喜悦，更是与百年文脉的轻轻触碰。快门声落，定格的不只是个体的毕业时刻，更是一代人与一座精神地标的双向奔赴。"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 1
+
+[node name="Content2" type="Label" parent="地点/大礼堂"]
+offset_left = 677.143
+offset_top = 90.7143
+offset_right = 1088.14
+offset_bottom = 295.714
+text = "    那些在大礼堂度过的日夜，早已化作记忆深处最璀璨的星辰。记得迎新晚会散场后，月光洒在礼堂台阶上，与好友们谈论着节目的意犹未尽；也记得学术讲座结束时，暮色中的校园格外宁静，满脑子新观点带来的震撼却久久不能平息。这些瞬间，或让人热泪盈眶，或令人心潮澎湃，它们汇聚成河，流淌在成长的道路上，照亮我们追寻热爱、探索真知的征程。"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 1
+
+[node name="Content3" type="Label" parent="地点/大礼堂"]
+offset_left = 674.286
+offset_top = 315.714
+offset_right = 1085.29
+offset_bottom = 515.714
+text = "    大礼堂不仅承载着无数个闪闪发光的片段，更在岁月的流转中，以润物细无声的方式塑造着我们的灵魂。它用百年的历史积淀，为青春的热烈注入沉稳的力量，让我们明白，每一次在舞台上的绽放、每一次在知识海洋中的遨游，都是对这座建筑所承载精神的传承与延续。在这里，青春在艺术与思想的滋养中，绽放出独一无二、绚丽夺目的光芒，大礼堂也因此成为生命中永不褪色的精神丰碑，将南大人的故事，永远书写在历史的长卷之上。"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="地点/大礼堂"]
+offset_left = 768.571
+offset_top = 582.143
+offset_right = 3328.57
+offset_bottom = 2270.14
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("12_hswn0")
+
+[node name="苏浙运动场" type="Node2D" parent="地点"]
+visible = false
+position = Vector2(123, 0)
+scale = Vector2(1.4, 1.4)
+script = ExtResource("12_75fxu")
+sequence = 5
+
+[node name="Title" type="Label" parent="地点/苏浙运动场"]
+offset_left = 130.714
+offset_top = 110.0
+offset_right = 370.714
+offset_bottom = 201.0
+text = "苏浙运动场"
+label_settings = SubResource("LabelSettings_aulyy")
+
+[node name="Subtitle" type="Label" parent="地点/苏浙运动场"]
+offset_left = 89.2857
+offset_top = 274.286
+offset_right = 179.286
+offset_bottom = 309.286
+text = "子标题"
+label_settings = SubResource("LabelSettings_ebb4q")
+
+[node name="Tips" type="Label" parent="地点/苏浙运动场"]
+visible = false
+offset_left = 108.0
+offset_top = 249.0
+offset_right = 564.0
+offset_bottom = 324.0
+text = "找回了这部分的回忆， 那就在笔记上写些什么吧。
+（选择你最想写进笔记的一段话）"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 3
+
+[node name="Content1" type="Label" parent="地点/苏浙运动场"]
+offset_left = 129.0
+offset_top = 353.571
+offset_right = 540.0
+offset_bottom = 629.571
+text = "	校外的游客总好奇，为什么毕业生要在这栋 “旧楼” 前停留这么久。他们不知道，当我们把掌心按在 “1919” 的旧刻上，指纹会与历史的掌纹重叠；当学士帽掠过门楣的雕花，扬起的不仅是毕业的喜悦，更是与百年文脉的轻轻触碰。快门声落，定格的不只是个体的毕业时刻，更是一代人与一座精神地标的双向奔赴。"
+label_settings = SubResource("LabelSettings_rf2l0")
+autowrap_mode = 1
+
+[node name="Subtitle2" type="Label" parent="地点/苏浙运动场"]
+offset_left = 646.429
+offset_top = 60.0
+offset_right = 758.429
+offset_bottom = 95.0
+text = "时光印象"
+label_settings = SubResource("LabelSettings_ebb4q")
+
+[node name="Button1" type="Button" parent="地点/苏浙运动场"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 150.0
+offset_top = 320.0
+offset_right = 350.0
+offset_bottom = 360.0
+text = "热血沸腾的竞技战场"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="地点/苏浙运动场/Button1"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_bw87j")
+
+[node name="Button2" type="Button" parent="地点/苏浙运动场"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 150.0
+offset_top = 380.0
+offset_right = 350.0
+offset_bottom = 420.0
+text = "绿茵场上的激情角逐"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="地点/苏浙运动场/Button2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_bw87j")
+
+[node name="Button3" type="Button" parent="地点/苏浙运动场"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 150.0
+offset_top = 440.0
+offset_right = 350.0
+offset_bottom = 480.0
+text = "“百团大战”"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="地点/苏浙运动场/Button3"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_bw87j")
+
+[node name="TextureRect1" type="TextureRect" parent="地点/苏浙运动场"]
+offset_left = 742.857
+offset_top = 117.857
+offset_right = 1992.86
+offset_bottom = 947.858
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_rhh02")
+
+[node name="TextureRect2" type="TextureRect" parent="地点/苏浙运动场"]
+offset_left = 740.0
+offset_top = 317.857
+offset_right = 2445.0
+offset_bottom = 1314.86
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("15_ip0a6")
+
+[node name="TextureRect3" type="TextureRect" parent="地点/苏浙运动场"]
+offset_left = 745.0
+offset_top = 504.286
+offset_right = 1995.0
+offset_bottom = 1334.28
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_8b7ae")
+
+[node name="CloseButton" type="Button" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 1771.0
+offset_top = 17.0
+offset_right = 1921.0
+offset_bottom = 67.0
+theme_override_font_sizes/font_size = 30
+text = "返回地图"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="CloseButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_bw87j")
+expand_mode = 1
+
+[node name="PreButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 956.0
+offset_right = 132.0
+offset_bottom = 1044.0
+icon = ExtResource("14_2chv5")
+flat = true
+
+[node name="NextButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1788.0
+offset_top = 948.0
+offset_right = 1876.0
+offset_bottom = 1036.0
+icon = ExtResource("15_bw87j")
+flat = true
+
+[connection signal="pressed" from="地点/图书馆/Button1" to="地点/图书馆" method="_on_button_1_pressed"]
+[connection signal="pressed" from="地点/图书馆/Button2" to="地点/图书馆" method="_on_button_2_pressed"]
+[connection signal="pressed" from="地点/教学楼/Button1" to="地点/教学楼" method="_on_button_1_pressed"]
+[connection signal="pressed" from="地点/教学楼/Button2" to="地点/教学楼" method="_on_button_2_pressed"]
+[connection signal="pressed" from="地点/北大楼/Button1" to="地点/北大楼" method="_on_button_1_pressed"]
+[connection signal="pressed" from="地点/北大楼/Button2" to="地点/北大楼" method="_on_button_2_pressed"]
+[connection signal="pressed" from="地点/北大楼/Button3" to="地点/北大楼" method="_on_button_3_pressed"]
+[connection signal="pressed" from="地点/校史馆/Button1" to="地点/校史馆" method="_on_button_1_pressed"]
+[connection signal="pressed" from="地点/校史馆/Button2" to="地点/校史馆" method="_on_button_2_pressed"]
+[connection signal="pressed" from="地点/大礼堂/Button1" to="地点/大礼堂" method="_on_button_1_pressed"]
+[connection signal="pressed" from="地点/大礼堂/Button2" to="地点/大礼堂" method="_on_button_2_pressed"]
+[connection signal="pressed" from="地点/苏浙运动场/Button1" to="地点/苏浙运动场" method="_on_button_1_pressed"]
+[connection signal="pressed" from="地点/苏浙运动场/Button2" to="地点/苏浙运动场" method="_on_button_2_pressed"]
+[connection signal="pressed" from="地点/苏浙运动场/Button3" to="地点/苏浙运动场" method="_on_button_3_pressed"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="PreButton" to="." method="_on_pre_button_pressed"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

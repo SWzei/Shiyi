@@ -1,0 +1,32 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "StyleForAll",
+"suffix": ""
+},
+&"default_portrait": "Intro",
+&"description": "",
+&"display_name": "南京大学小蓝鲸",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"Intro": {
+"export_overrides": {
+"image": "\"res://Sprites/GateLibrary/BlueWhale.png\""
+},
+"ignore_char_scale": true,
+"mirror": false,
+"offset": Vector2(-200, 0),
+"scale": 0.7,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

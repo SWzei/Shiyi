@@ -1,0 +1,178 @@
+[gd_scene load_steps=17 format=3 uid="uid://dndy4pfa7vp63"]
+
+[ext_resource type="Script" uid="uid://b37px4dedgakt" path="res://Scripts/Suzhe/suzhe.gd" id="1_mii2f"]
+[ext_resource type="Texture2D" uid="uid://7yh3qiocikog" path="res://assets/scenes/苏浙运动场.png" id="1_miqcm"]
+[ext_resource type="Texture2D" uid="uid://bstko50eygex1" path="res://assets/scenes/百团摊位.png" id="2_i458i"]
+[ext_resource type="Script" uid="uid://ftj5fcfr2p6j" path="res://Scripts/Suzhe/area_2d_orienteering.gd" id="3_1lj6f"]
+[ext_resource type="Script" uid="uid://bxsvvs7boclvl" path="res://Scripts/Suzhe/area_2d_photography.gd" id="5_fpvt5"]
+[ext_resource type="Script" uid="uid://d64ov357xxh0" path="res://Scripts/Suzhe/area_2d_piano.gd" id="7_m1dxc"]
+[ext_resource type="Texture2D" uid="uid://cxexgomqyf2lp" path="res://Sprites/UI/panel-border-015.png" id="7_ptrty"]
+[ext_resource type="Texture2D" uid="uid://b5u2xbj0jl8cc" path="res://Sprites/Elements/SuZheFlag.png" id="9_miqcm"]
+[ext_resource type="PackedScene" uid="uid://bc6e45w73b7lt" path="res://Scenes/Suzhe_scenes/NJUer.tscn" id="9_y15k0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpw2d"]
+size = Vector2(95.4183, 90.6694)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhbuj"]
+size = Vector2(109, 96.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptrty"]
+size = Vector2(103.876, 103)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffhgx"]
+size = Vector2(978.835, 900)
+
+[sub_resource type="SystemFont" id="SystemFont_it7ab"]
+subpixel_positioning = 0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xen4f"]
+size = Vector2(948.871, 730)
+
+[sub_resource type="SystemFont" id="SystemFont_v16j3"]
+subpixel_positioning = 0
+
+[node name="Suzhe" type="Node2D"]
+scale = Vector2(1.00119, 1)
+script = ExtResource("1_mii2f")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(968.847, 544)
+texture = ExtResource("1_miqcm")
+
+[node name="NJUer" parent="." instance=ExtResource("9_y15k0")]
+z_index = 1
+position = Vector2(904.923, 522)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(965.851, 549)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape_piano" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(715.149, 391)
+shape = SubResource("RectangleShape2D_mpw2d")
+
+[node name="CollisionShape_orienteering" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1106.68, 453)
+shape = SubResource("RectangleShape2D_yhbuj")
+
+[node name="CollisionShape_photography" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(889.941, 721)
+shape = SubResource("RectangleShape2D_mpw2d")
+
+[node name="CollisionPolygon2D_up" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-6.99168, 2, 1929.7, 2, 1919.72, 631, 1730.94, 625, 925.898, 46, 735.125, 50, 216.742, 209, 175.791, 335, 7.99049, 338)
+
+[node name="CollisionPolygon2D_left" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-8.9893, -19)
+polygon = PackedVector2Array(6.99168, 355, 176.79, 350, 737.123, 1094, 6.99168, 1090)
+
+[node name="CollisionPolygon2D_down" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0.998811, 1062, 1927.71, 1090, 1914.72, 1138, 7.99049, 1111)
+
+[node name="CollisionPolygon2D_right" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-12.9845, -17)
+polygon = PackedVector2Array(1733.94, 638, 1927.71, 636, 1916.72, 1105, 1332.41, 1086, 1730.94, 764, 1726.95, 623)
+
+[node name="CollisionShape_goalup" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1249.51, 735.5)
+shape = SubResource("RectangleShape2D_ptrty")
+
+[node name="CollisionShape_goaldown" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(603.516, 187.661)
+shape = SubResource("RectangleShape2D_mpw2d")
+
+[node name="stall_orienteering" type="Sprite2D" parent="."]
+position = Vector2(1109.68, 465)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_i458i")
+
+[node name="Area2D_orienteering" type="Area2D" parent="stall_orienteering"]
+script = ExtResource("3_1lj6f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stall_orienteering/Area2D_orienteering"]
+position = Vector2(-49.9429, 30)
+shape = SubResource("RectangleShape2D_ffhgx")
+
+[node name="ButtonNode" type="Node2D" parent="stall_orienteering/Area2D_orienteering"]
+
+[node name="Button" type="Button" parent="stall_orienteering/Area2D_orienteering/ButtonNode"]
+offset_left = 174.789
+offset_top = 200.0
+offset_right = 1024.79
+offset_bottom = 460.0
+theme_override_fonts/font = SubResource("SystemFont_it7ab")
+theme_override_font_sizes/font_size = 100
+text = "NJU定向队"
+
+[node name="stall_photography" type="Sprite2D" parent="."]
+position = Vector2(893.936, 738)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_i458i")
+
+[node name="Area2D_photography" type="Area2D" parent="stall_photography"]
+script = ExtResource("5_fpvt5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stall_photography/Area2D_photography"]
+position = Vector2(-49.9429, 30)
+shape = SubResource("RectangleShape2D_ffhgx")
+
+[node name="ButtonNode" type="Node2D" parent="stall_photography/Area2D_photography"]
+
+[node name="Button" type="Button" parent="stall_photography/Area2D_photography/ButtonNode"]
+offset_left = 174.789
+offset_top = 200.0
+offset_right = 1024.79
+offset_bottom = 460.0
+theme_override_fonts/font = SubResource("SystemFont_it7ab")
+theme_override_font_sizes/font_size = 100
+text = "NJU摄影社"
+
+[node name="stall_piano" type="Sprite2D" parent="."]
+position = Vector2(719.144, 407)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_i458i")
+
+[node name="Area2D_piano" type="Area2D" parent="stall_piano"]
+script = ExtResource("7_m1dxc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stall_piano/Area2D_piano"]
+position = Vector2(-9.98657, 65)
+shape = SubResource("RectangleShape2D_xen4f")
+
+[node name="ButtonNode" type="Node2D" parent="stall_piano/Area2D_piano"]
+
+[node name="Button" type="Button" parent="stall_piano/Area2D_piano/ButtonNode"]
+offset_left = 5.0
+offset_top = 220.0
+offset_right = 855.0
+offset_bottom = 480.0
+theme_override_fonts/font = SubResource("SystemFont_v16j3")
+theme_override_font_sizes/font_size = 100
+text = "林泉钢琴社"
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 14.9822
+offset_top = 30.0
+offset_right = 214.982
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 24
+text = "离开苏浙运动场"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="QuitButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_ptrty")
+
+[node name="SuZheFlag" type="Sprite2D" parent="."]
+position = Vector2(1327.42, 224)
+rotation = 0.231109
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_miqcm")
+
+[connection signal="pressed" from="QuitButton" to="NJUer" method="_on_quit_button_pressed"]
