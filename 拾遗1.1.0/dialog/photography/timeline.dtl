@@ -1,4 +1,0 @@
-[background arg="res://assets/scenes/photography摊位.png" fade="0.0"]
-社团似乎并没有人，唯有一本相册静静地躺着，仿佛在等待有心人翻阅它的故事。
-走近看看
-[signal arg="_change_to_photography"]
